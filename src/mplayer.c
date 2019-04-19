@@ -181,6 +181,7 @@ struct obj *obj;
             if (helm == HELM_OF_BRILLIANCE)
                 helm = STRANGE_OBJECT;
             break;
+        case PM_HUMAN_CAVEMAN:
         case PM_HUMAN_CAVEWOMAN:
             if (rn2(4))
                 weapon = MACE;
@@ -200,6 +201,7 @@ struct obj *obj;
                 shield = STRANGE_OBJECT;
             break;
         case PM_HUMAN_KNIGHT:
+        case PM_HUMAN_DARK_KNIGHT:
             if (rn2(4))
                 weapon = LONG_SWORD;
             if (rn2(2))
@@ -212,6 +214,7 @@ struct obj *obj;
             if (rn2(2))
                 shield = STRANGE_OBJECT;
             break;
+        case PM_HUMAN_PRIEST:
         case PM_HUMAN_PRIESTESS:
             if (rn2(2))
                 weapon = MACE;

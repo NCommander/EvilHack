@@ -4121,22 +4121,24 @@ struct obj *no_wish;
                 case ART_KEOLEWA:
                 case ART_DRAGONBANE:
                 case ART_SCEPTRE_OF_MIGHT:
-                    pm = PM_HUMAN_CAVEWOMAN;
+                    pm = PM_HUMAN_CAVEMAN;
                     break;
                 case ART_STAFF_OF_AESCULAPIUS:
                     pm = PM_HUMAN_HEALER;
                     break;
                 case ART_MAGIC_MIRROR_OF_MERLIN:
                 case ART_EXCALIBUR:
-                case ART_DIRGE:
                     pm = PM_HUMAN_KNIGHT;
+                    break;
+                case ART_DIRGE:
+                    pm = PM_HUMAN_DARK_KNIGHT;
                     break;
                 case ART_EYES_OF_THE_OVERWORLD:
                     pm = PM_HUMAN_MONK;
                     break;
                 case ART_MITRE_OF_HOLINESS:
                 case ART_TROLLSBANE:
-                    pm = PM_HUMAN_PRIESTESS;
+                    pm = PM_HUMAN_PRIEST;
                     break;
                 case ART_LONGBOW_OF_DIANA:
                     otmp2 = mksobj(ARROW, TRUE, FALSE);
@@ -4187,18 +4189,20 @@ struct obj *no_wish;
                     if (u.ualign.type == A_NEUTRAL)
                         pm = PM_HUMAN_HEALER;
                     else
-                        pm = PM_HUMAN_PRIESTESS;
+                        pm = PM_HUMAN_PRIEST;
                     break;
                 case ART_WEREBANE:
                     if (u.ualign.type == A_CHAOTIC)
                         pm = PM_HUMAN_BARBARIAN;
                     else
-                        pm = PM_HUMAN_CAVEWOMAN;
+                        pm = PM_HUMAN_CAVEMAN;
                     break;
                 default:
                     impossible("Unknown artifact!");
                     break;
             }
+            if (pm == PM_HUMAN_CAVEMAN && rn2(2)) pm = PM_HUMAN_CAVEWOMAN;
+            if (pm == PM_HUMAN_PRIEST && rn2(2)) pm = PM_HUMAN_PRIESTESS;
         }
 
         mtmp = mk_mplayer(&mons[pm], u.ux, u.uy, TRUE, otmp);
