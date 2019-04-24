@@ -169,7 +169,6 @@ room_detail	: room_name
 		| trap_detail
 		| altar_detail
 		| fountain_detail
-                | forge_detail
 		| sink_detail
 		| pool_detail
 		| gold_detail
@@ -264,7 +263,6 @@ map_detail	: monster_detail
 		| branch_region
 		| altar_detail
 		| fountain_detail
-                | forge_detail
 		| mazewalk_detail
 		| wallify_detail
 		| ladder_detail
@@ -366,9 +364,6 @@ lev_region	: region
 
 fountain_detail : FOUNTAIN_ID ':' coordinate
 		;
-
-forge_detail : FORGE_ID ':' coordinate
-                ;
 
 sink_detail : SINK_ID ':' coordinate
 		;
@@ -514,7 +509,6 @@ The maximum size of a map is normally 76 columns by 21 rows.
 \&'S'	a secret door
 \&'H'	a secret corridor
 \&'{'	a fountain
-\&'U'   a forge
 \&'\\'	a throne
 \&'K'	a sink
 \&'}'	a part of a moat or other deep water

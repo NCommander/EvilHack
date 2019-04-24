@@ -1307,8 +1307,6 @@ char c;
         return (SDOOR);
     case 'H':
         return (SCORR);
-    case 'U':
-        return (FORGE);
     case '{':
         return (FOUNTAIN);
     case '\\':
